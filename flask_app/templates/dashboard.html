@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="bar">
+  <h2>Bienvenid@ {{ session.name }}</h2>
+  <a class="btn primary" href="/nuevo">Organizar Viaje</a>
+</div>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Destino</th><th>Organizador</th><th>Fecha Inicio</th><th>Fecha Fin</th><th>Acciones</th></tr></thead>
+  <tbody>
+  {% for t in trips %}
+    <tr>
+      <td><a href="/ver/{{ t.id }}">{{ t.destination }}</a></td>
+      <td>{{ t.organizer }}</td>
+      <td>{{ t.start_date }}</td>
+      <td>{{ t.end_date }}</td>
+      <td>
+        <a href="/ver/{{ t.id }}">Ver</a>
+        {% if t.user_id == session.user_id %}
+          · <a href="/editar/{{ t.id }}">Editar</a>
+          · <a href="/borrar/{{ t.id }}" class="confirm-delete">Borrar</a>
+        {% endif %}
+      </td>
+    </tr>
+  {% else %}
+    <tr><td colspan="5">No hay viajes próximos.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

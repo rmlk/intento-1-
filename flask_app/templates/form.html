@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>{{ title }}</h2>
+  <form action="{{ action }}" method="post">
+    <label>Destino <input name="destination" value="{{ trip.destination or '' }}"></label>
+    <label>Fecha de Inicio <input type="date" id="start_date" name="start_date" value="{{ trip.start_date or '' }}"></label>
+    <label>Fecha de Fin <input type="date" id="end_date" name="end_date" value="{{ trip.end_date or '' }}"></label>
+    <label>Itinerario
+      <textarea id="plan" name="plan" maxlength="60" rows="4">{{ trip.plan or '' }}</textarea>
+      <small><span id="count">0</span>/40</small>
+    </label>
+    <button class="btn primary">Guardar</button>
+  </form>
+</section>
+{% endblock %}

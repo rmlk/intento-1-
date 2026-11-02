@@ -1,0 +1,25 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,sans-serif;background:#f4f6fb;color:#222}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 24px;background:#1e3a8a;color:#fff;flex-wrap:wrap;gap:8px}
+header h1{font-size:1.3rem;margin:0}
+main{max-width:900px;margin:24px auto;padding:0 16px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 8px #0001;margin-bottom:20px}
+label{display:block;margin-bottom:12px;font-weight:600}
+input,textarea{width:100%;padding:8px;margin-top:4px;border:1px solid #bbb;border-radius:6px;font:inherit}
+.btn{display:inline-block;padding:8px 14px;border:1px solid #888;border-radius:6px;background:#fff;color:#222;text-decoration:none;cursor:pointer;font:inherit}
+.btn.primary{background:#2563eb;color:#fff;border-color:#2563eb}
+.msg{padding:10px 14px;border-radius:6px;margin:0 0 10px}
+.msg.error{background:#fee2e2;color:#b91c1c}
+.bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:#fff}
+th,td{padding:10px;border:1px solid #ddd;text-align:left}
+th{background:#e5e7eb}
+.travelers{background:#e5e7eb;padding:14px;border-radius:8px;margin-top:16px}
+small.over{color:#b91c1c}
+
+
+.btn, .card { transition: all 0.2s ease-in-out; }
+.btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.12); }

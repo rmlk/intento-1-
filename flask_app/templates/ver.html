@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>{{ trip.destination }}</h2>
+  <p><strong>Organizador:</strong> {{ trip.organizer }}</p>
+  <p><strong>Fecha Inicio:</strong> {{ trip.start_date }}</p>
+  <p><strong>Fecha Fin:</strong> {{ trip.end_date }}</p>
+  <p><strong>Itinerario:</strong> {{ trip.plan }}</p>
+  <div class="travelers">
+    <h3>Viajeros</h3>
+    <ul>{% for t in travelers %}<li>{{ t.first_name }}</li>{% else %}<li>Aún no hay viajeros.</li>{% endfor %}</ul>
+    {% if joined %}
+      <a class="btn" href="/cancelar/{{ trip.id }}">Cancelar</a>
+    {% else %}
+      <a class="btn primary" href="/unirme/{{ trip.id }}">¡Unirme!</a>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="cols">
+  <section class="card">
+    <h2>Registro</h2>
+    <form action="/register" method="post">
+      <label>Nombre <input name="first_name" required></label>
+      <label>Apellido <input name="last_name" required></label>
+      <label>E-mail <input type="email" name="email" required></label>
+      <label>Contraseña <input type="password" name="password" required></label>
+      <label>Conf. Contraseña <input type="password" name="confirm" required></label>
+      <button class="btn primary">Registrar</button>
+    </form>
+  </section>
+  <section class="card">
+    <h2>Inicio de Sesión</h2>
+    <form action="/login" method="post">
+      <label>E-mail <input type="email" name="email" required></label>
+      <label>Contraseña <input type="password" name="password" required></label>
+      <button class="btn primary">Iniciar Sesión</button>
+    </form>
+  </section>
+</div>
+{% endblock %}
